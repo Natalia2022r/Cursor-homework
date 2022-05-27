@@ -17,20 +17,32 @@ document.getElementById("result1").innerHTML = `<div ><p>getMaxDigit => ${rand} 
 
 // 2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 
+
 function pow(x, n) {
-    let result = 1;
 
-    for (let i = 0; i < n; i++) {
-        result *= x;
-    }
-    if(n < 0){
-        result;
-    }
+    let result = x;
 
-    return result;
+    if(n === 0){
+        result = 1;
+    }
+    for (let i = 1; i < Math.abs(n); i++) {
+     if(n === 1){
+         return result;}
+   
+    result *=x;
+    }
+ if (n < 0){
+    return result = 1/result;
 }
 
+    return result;
+
+}
+
+
 // alert(pow(prompt(`Число`), prompt(`Степень`)));
+
+
 
 document.getElementById("result2").innerHTML = `<div ><p>function pow (5, 3) => ${pow(5, 3)}</p></div>`;
 
