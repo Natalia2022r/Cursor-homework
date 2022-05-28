@@ -31,7 +31,7 @@ function pow(x, n) {
   return result;
 }
 
-// alert( pow(prompt (`Число`), prompt(`Степень`)) );
+alert( pow(prompt (`Число`), prompt(`Степень`)) );
 
 document.getElementById("result2").innerHTML = (`<div ><p>function pow (5, 3) => ${pow(5, 3)}</p></div>`);
 
