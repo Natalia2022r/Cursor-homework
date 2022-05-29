@@ -114,22 +114,25 @@ document.getElementById("result6").innerHTML = `<div ><p>function countLetter(е
 
 const convertMoney = (money) => {
     money = money.toUpperCase();
-    let result;
-    if (money !== Number) {
-        return 'Введіть потрібну валюту';
-       }
+
+        if (isNaN(parseInt(money))) {
+    return 'Введіть потрібну валюту';
+               }
+
     if (money.includes("$")) {
-        result = parseInt(money) * 28 + "UAH";
-        return result;
+        return parseInt(money) * 28 + "UAH";
+       
     }
     if (money.includes("UAH")) {
-        result = parseInt(money) / 28 + "$";
-        return result;
-    }
+        return parseInt(money) / 28 + "$";
+        }
     if (!money.includes("$") || !money.includes("UAH")) {
         return "Ми не конвертуєм вашу валюту";}
 
+
+    return ;
     };
+
     
 // console.log(convertMoney(`120$`));
 
@@ -162,11 +165,10 @@ function deleteLetters(letter, word) {
     } else if (!isNaN(Number(word)) && word !== " ") {
         return "Ви ввели число";
     }
-    let letterLower = letter.toLowerCase();
-    let wordLower = word.toLowerCase();
+      let wordLower = word.toLowerCase();
     return wordLower.split(letter).join("");
 }
-//console.log (deleteLetters(`a`, `BLABLABLA`))
+// console.log (deleteLetters(`a`, `BLABLABLA`))
 
 document.getElementById("result9").innerHTML = `<div ><p>function deleteLetters(е, змееед) => ${deleteLetters(`е`,`змееед`)}</p></div>`;
 
@@ -175,17 +177,14 @@ document.getElementById("result9").innerHTML = `<div ><p>function deleteLetters(
 function isPalyndrom(word) {
     if (!isNaN(Number(word)) && word !== " ") {
         return "Ви ввели число";
-
     }
-    let wordLower = word.toLowerCase();
+    let wordLower = word.split(` `).join(``).toLowerCase();
     const wordRevers = wordLower.split("").reverse().join("").toLowerCase();
-    if (wordLower === wordRevers) {
-        return true;
-    }
-    return false;
+    return wordLower === wordRevers;
+        
 }
 
-console.log (isPalyndrom(`Три психи пили Пилипихи спирт`))
+// console.log (isPalyndrom(`top spot`))
 
 document.getElementById("result10").innerHTML = `<div ><p>function isPalyndrom(шалаш) => ${isPalyndrom(`шалаш`)}</p></div>`;
 document.getElementById("result101").innerHTML = `<div ><p>function isPalyndrom(шашлык) => ${isPalyndrom(`шашлык`)}</p></div>`;
