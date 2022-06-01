@@ -49,26 +49,10 @@ h2 {
 }
 
 
-#result3 {
-    padding: 0;
-}
-#result31 {
+.pading  {
     padding: 0;
 }
 
-#result7 {
-    padding: 0;
-}
-#result71 {
-    padding: 0;
-}
-
-#result9 {
-    padding: 0;
-}
-#result91 {
-    padding: 0;
-}
 
 .last {
     display: flex;

@@ -19,34 +19,23 @@ document.getElementById("result1").innerHTML = `<div ><p>getMaxDigit => ${rand} 
 
 
 function pow(x, n) {
-
     let result = x;
-
     if(n === 0){
         result = 1;
     }
+    if(n === 1){
+        return result;}
     for (let i = 1; i < Math.abs(n); i++) {
-     if(n === 1){
-         return result;}
-   
     result *=x;
     }
  if (n < 0){
     return result = 1/result;
 }
-
     return result;
-
 }
 
-
 // alert(pow(prompt(`Число`), prompt(`Степень`)));
-
-
-
 document.getElementById("result2").innerHTML = `<div ><p>function pow (5, 3) => ${pow(5, 3)}</p></div>`;
-
-//   document.getElementById("result2").innerHTML = (`<div ><p>function pow (5, 3) => ${pow(5, 3)}</p></div>`);
 
 //  3. Створити функцію, яка форматує ім'я, роблячи першу букву великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);
 
@@ -63,12 +52,11 @@ document.getElementById("result2").innerHTML = `<div ><p>function pow (5, 3) => 
 
 //     alert(name1());
 
-const isname = (name) => {
+const capitalLetter = (name) => {
     return name[0].toUpperCase() + name.toLowerCase().slice(1);
 };
-
-document.getElementById("result3").innerHTML = `<div ><p>function isname(naTALIA) => ${isname(`naTALIA`)}</p></div>`;
-document.getElementById("result31").innerHTML = `<div ><p>function isname(naTAlIa) => ${isname(`naTAlIa`)}</p></div>`;
+document.getElementById("result3").innerHTML = `<div ><p>function capitalLetter(naTALIA) => ${capitalLetter(`naTALIA`)}</p></div>`;
+document.getElementById("result31").innerHTML = `<div ><p>function capitalLetter(naTAlIa) => ${capitalLetter(`naTAlIa`)}</p></div>`;
 
 // 4. Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати. (Податок = 18% + 1.5% -> 19.5%). Приклад: 1000 -> 805
 
@@ -91,12 +79,9 @@ document.getElementById("result5").innerHTML = `<div ><p>function getRandomNumbe
 // 6.Створити функцію, яка рахує скільки разів певна буква повторюється в слові. Приклад: countLetter("а", "Асталавіста") -> 4
 
 function countLetter(letter, word) {
-    if (!isNaN(Number(letter)) && letter !== " ") {
-        return "Ви ввели число";
-    } else if (!isNaN(Number(word)) && word !== " ") {
+    if (!isNaN(Number(letter)) && letter !== " " || !isNaN(Number(word)) && word !== " ") {
         return "Ви ввели число";
     }
-
     let counter = 0;
     let letterLower = letter.toLowerCase();
     let wordLower = word.toLowerCase();
@@ -107,29 +92,24 @@ function countLetter(letter, word) {
     }
     return counter;
 }
-
+// console.log(countLetter('е', 'В лесу живет змееед'));
 document.getElementById("result6").innerHTML = `<div ><p>function countLetter(е, В лесу живет змееед) => ${countLetter(`е`,`В лесу живет змееед`)}</p></div>`;
 
 //7(7. 8.)  Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку. Приклад: convertCurrency("100$") -> 2500 грн. або convertCurrency("2500UAH") -> 100$
 
 const convertMoney = (money) => {
     money = money.toUpperCase();
-
         if (isNaN(parseInt(money))) {
     return 'Введіть потрібну валюту';
                }
-
     if (money.includes("$")) {
-        return parseInt(money) * 28 + "UAH";
-       
+        return parseInt(money) * 28 + "UAH";       
     }
     if (money.includes("UAH")) {
         return parseInt(money) / 28 + "$";
         }
     if (!money.includes("$") || !money.includes("UAH")) {
         return "Ми не конвертуєм вашу валюту";}
-
-
     return ;
     };
 
@@ -160,13 +140,10 @@ document.getElementById("result81").innerHTML = `<div ><p>function getRandomPass
 //9.Створіть функцію, яка видаляє всі букви з речення. Приклад: deleteLetters('a', "blablabla") -> "blblbl"
 
 function deleteLetters(letter, word) {
-    if (!isNaN(Number(letter)) && letter !== " ") {
-        return "Ви ввели число";
-    } else if (!isNaN(Number(word)) && word !== " ") {
+    if (!isNaN(Number(letter)) && letter !== " " || !isNaN(Number(word)) && word !== " ") {
         return "Ви ввели число";
     }
-      let wordLower = word.toLowerCase();
-    return wordLower.split(letter).join("");
+    return word.toLowerCase().split(letter).join("");
 }
 // console.log (deleteLetters(`a`, `BLABLABLA`))
 
@@ -196,7 +173,6 @@ function deleteDuplicateLetter(string) {
         return "Ви ввели число";
     }
     let str = string.toLowerCase();
-
     for (let i = 0; i < str.length; i++) {
         if (i != str.lastIndexOf(str[i])) {
             str = str.split(str[i]).join("");
