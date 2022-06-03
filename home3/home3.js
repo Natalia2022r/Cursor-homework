@@ -99,22 +99,15 @@ document.getElementById("result6").innerHTML = `<div ><p>function countLetter(е
 
 const convertMoney = (money) => {
     money = money.toUpperCase();
-        if (isNaN(parseInt(money))) {
-    return 'Введіть потрібну валюту';
-               }
-    if (money.includes("$")) {
-        return parseInt(money) * 28 + "UAH";       
+    if(money.includes('UAH') && Number.isInteger(+money.split('UAH')[0])) {
+     return parseInt(money) / 28 + '$';
+    } else if(money.includes('$') && Number.isInteger(+money.split('$')[0])) {
+     return parseInt(money) * 28 + 'UAH';
     }
-    if (money.includes("UAH")) {
-        return parseInt(money) / 28 + "$";
-        }
-    if (!money.includes("$") || !money.includes("UAH")) {
-        return "Ми не конвертуєм вашу валюту";}
-    return ;
-    };
-
     
-// console.log(convertMoney(`120$`));
+    return 'Ви ввели не ту валюту';
+    };
+    console.log(convertMoney(`100$`));
 
 document.getElementById("result7").innerHTML = `<div ><p>function convertMoney(2800UAH) => ${convertMoney(`2800uah`)}</p></div>`;
 document.getElementById("result71").innerHTML = `<div ><p>function convertMoney(120$) => ${convertMoney(`120$`)}</p></div>`;

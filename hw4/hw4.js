@@ -22,7 +22,7 @@ return boys.map((boys, i) => [boys, girls[i]]);
 console.log (allStudents(students));
 const allStudent = allStudents();
 
-// 2.Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати. Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
+// 2.Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати.
 
 console.log(`2.Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати.`)
  
@@ -48,7 +48,7 @@ let studentMarks = [];
 
 for (let i = 0; i < students.length; i++){
 
-    studentMarks.push([students[i] + `,` + ` ` + marks[i]] );
+    studentMarks.push([students[i] + `, ` + marks[i]] );
 }
 return studentMarks
 }
@@ -61,8 +61,7 @@ console.log(getStudenMarks(students, marks));
 
 console.log(`4.Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт`)
 
-const randomEvaluation = taskforСouples1.map(function(el) {
-   return  [el + ` , ` +  Math.floor((Math.random()* 5)+1)];
-});
+const randomEvaluation = (taskforСouples1) => 
+taskforСouples1.map((el)=> [...el, Math.floor((Math.random()* 5)+1)]);
 
-console.log(randomEvaluation);
+console.log(randomEvaluation(taskforСouples1, themes));
