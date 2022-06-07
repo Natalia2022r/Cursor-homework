@@ -73,11 +73,93 @@ const countPositiveNumbers =(...numbers) => numbers.filter(elem => elem > 0).len
 
 const  getDividedByFive  =(...numbers) => numbers.filter(elem => elem % 5 === 0);
 
-/*8.Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "), після чого масив необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте можливість розширювати список цих слів у майбутньому.
-Приклад: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing kidding?" Приклад: replaceBadWords("Holy shit!") -> "Holy ****!" Приклад: replaceBadWords("It's bullshit!") -> "It's bull****!"*/
+/*8.Створіть функцію replaceAll(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "), після чого масив необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте можливість розширювати список цих слів у майбутньому.
+Приклад: replaceAll("Are you fucking kidding?") -> "Are you ****ing kidding?" Приклад: replaceAll("Holy shit!") -> "Holy ****!" Приклад: replaceAll("It's bullshit!") -> "It's bull****!"*/
 
-const replaceBadWords = (string) => {
-    let string = string.split(``).join(``);
-    let bedWords = [`shit`, `fuck`];
-    console.log(bedWords)
-}
+function replaceAll(string) {
+
+    let reg = /(shit)|(Fuck)/gi;
+
+    let newstr = string.replace(reg, '****');
+ 
+    return newstr;
+
+};
+
+console.log(replaceAll('Are you fucking kidding?'));
+
+// 9.Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру. 
+// Приклад: divideByThree("Commander") -> ["com", "man", "der"] 
+// Приклад: divideByThree("live") -> ["liv", "e"]
+
+const divideByThree = (word) => {
+    if(Number.isInteger(+word)) {
+        return 'number is found';
+      }
+
+    let word1 = word.split('').filter((letter) => letter !== ' ');
+   
+    let arrWord = [];
+     for(let i = 0; i < word1.length; i + 3){
+         arrWord.push(word1.splice(0, 3).join('').toLowerCase());
+     }
+     return arrWord;
+    }
+//  console.log(divideByThree(`Commander`)); }
+
+
+ /*10.Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові. Для тестів не передавайте слова в яких більше 10 букв. Краще взагалі обмежити работу функції 10 буквами. 
+ Приклад: generateCombinations("man") -> ["man", "mna", "amn", "anm", "nam", "nma"] Приклад: generateCombinations("ol") -> ["ol", "lo"]*/
+
+ function generateCombinations(str) {
+
+   if (str.length > 10) {
+    return `Введіть слово довженною не більше 10 літер`;
+   };
+
+ let str1 = str.toLowerCase().split('');
+
+ if(str1.length === 1){ return [str1]};
+ let res = [];
+ for (let i = 0; i < str1.length; i++){
+ const letter = str1.splice(0, 1);
+ const result = generateCombinations(str1.join(''));
+ result.forEach(item => res.push(item + letter));
+ str1 = [...str1, ...letter];
+ }
+return res;
+ }
+ 
+// console.log(generateCombinations("man"));
+
+
+console.log('getRandomArray(10, 3, 100)=> ', getRandomArray(10, 3, 100));
+
+console.log('getModa(4, 75, 62, 5, 2)=> ', getModa(4, 75, 62, 5, 2));
+console.log('getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
+    getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
+console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
+    getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
+console.log('getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>', 
+getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getMedian1(1, 2, 3, 4)=>', getMedian1(1, 2, 3, 4));
+
+
+console.log('filterEvenNumbers(1, 2, 3, 4, 5, 6)=> ', filterEvenNumbers(1, 2, 3, 4, 5, 6));
+
+console.log('countPositiveNumbers(1, -2, 3, -4, -5, 6)=>', countPositiveNumbers(1, -2, 3, -4, -5, 6));
+
+console.log('getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>',
+    getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
+console.log(`replaceAll('Are you fucking kidding?', 'shit', 'Fuck')=>`,
+    replaceAll('Are you fucking kidding?', 'shit', 'Fuck'));
+console.log('replaceAll(`It\'s bullshit!`=>', replaceAll(`It's bullshit!`));
+
+console.log(`divideByThree('Commander')=> `, divideByThree('Commander'));
+console.log(`divideByThree('live')=> `, divideByThree('live'));
+
+console.log(`generateCombinations('man')=>`, generateCombinations('man'));
+console.log(`generateCombinations('ol')=>`, generateCombinations('ol'));
