@@ -91,7 +91,6 @@ function replaceAll(string) {
     let reg = /(shit)|(Fuck)/gi;  
     let newstr = string.replace(reg,  function(a, b, c) {
     return c.replace(/./g, '*');});
- 
     return newstr;
 
 };
@@ -143,33 +142,33 @@ return res;
 
 
 
-// console.log('getRandomArray(10, 3, 100)=> ', getRandomArray(10, 3, 100));
+console.log('getRandomArray(10, 3, 100)=> ', getRandomArray(10, 3, 100));
 
-// console.log('getModa(4, 75, 62, 5, 2)=> ', getModa(4, 75, 62, 5, 2));
-// console.log('getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
-//     getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getModa(4, 75, 62, 5, 2)=> ', getModa(4, 75, 62, 5, 2));
+console.log('getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
+    getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-// console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
-//     getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=> ',
+    getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-// console.log('getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>', 
-// getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
-// console.log('getMedian1(1, 2, 3, 4)=>', getMedian1(1, 2, 3, 4));
+console.log('getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>', 
+getMedian1(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getMedian1(1, 2, 3, 4)=>', getMedian1(1, 2, 3, 4));
 
 
-// console.log('filterEvenNumbers(1, 2, 3, 4, 5, 6)=> ', filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log('filterEvenNumbers(1, 2, 3, 4, 5, 6)=> ', filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
-// console.log('countPositiveNumbers(1, -2, 3, -4, -5, 6)=>', countPositiveNumbers(1, -2, 3, -4, -5, 6));
+console.log('countPositiveNumbers(1, -2, 3, -4, -5, 6)=>', countPositiveNumbers(1, -2, 3, -4, -5, 6));
 
-// console.log('getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>',
-//     getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)=>',
+    getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
-// console.log(`replaceAll('Are you fucking kidding?', 'shit', 'Fuck')=>`,
-//     replaceAll('Are you fucking kidding?', 'shit', 'Fuck'));
-// console.log('replaceAll(`It\'s bullshit!`=>', replaceAll(`It's bullshit!`));
+console.log(`replaceAll('Are you fucking kidding?', 'shit', 'Fuck')=>`,
+    replaceAll('Are you fucking kidding?', 'shit', 'Fuck'));
+console.log('replaceAll(`It\'s bullshit!`=>', replaceAll(`It's bullshit!`));
 
-// console.log(`divideByThree('Commander')=> `, divideByThree('Commander'));
-// console.log(`divideByThree('live')=> `, divideByThree('live'));
+console.log(`divideByThree('Commander')=> `, divideByThree('Commander'));
+console.log(`divideByThree('live')=> `, divideByThree('live'));
 
-// console.log(`generateCombinations('man')=>`, generateCombinations('man'));
-// console.log(`generateCombinations('ol')=>`, generateCombinations('ol'));
+console.log(`generateCombinations('man')=>`, generateCombinations('man'));
+console.log(`generateCombinations('ol')=>`, generateCombinations('ol'));
