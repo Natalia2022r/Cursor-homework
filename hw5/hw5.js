@@ -89,8 +89,8 @@ const  getDividedByFive  =(...numbers) => {
 function replaceAll(string) {
 
     let reg = /(shit)|(Fuck)/gi;  
-    let newstr = string.replace(reg,  function(a, b, c) {
-    return c.replace(/./g, '*');});
+    let newstr = string.replace(reg,  function(a) {
+    return a.replace(/./g, '*');});
     return newstr;
 
 };
