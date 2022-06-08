@@ -7,7 +7,7 @@ if (min > max){
     return `Введіть правільні значення`;
 }
 for (let i = 0; i < length; i++){
-randomArray.push(Math.floor(Math.random() * (max - min) + min));
+randomArray.push(Math.floor(Math.random() * (max - min + 1) + min));
 } 
 return randomArray;
 }    
@@ -65,12 +65,27 @@ const getMedian1 = (...numbers) =>{
 // 5.Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 // Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5]
 
-const filterEvenNumbers  =(...numbers) => numbers.filter(elem => elem % 2 !== 0);
+const filterEvenNumbers  =(...numbers) =>{
+    let arr = numbers.map(elem => Number(elem)).filter((item) => parseInt(item) === item);
+    let i = 0;
+    if (arr[i] === 0){
+        return `Введіть значення`
+    }
+
+ return numbers.filter(elem => elem % 2 !== 0);
+}
 
 // 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 // Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3
 
-const countPositiveNumbers =(...numbers) => numbers.filter(elem => elem > 0).length;
+const countPositiveNumbers =(...numbers) => {
+    let arr = numbers.map(elem => Number(elem)).filter((item) => parseInt(item) === item);
+    let i = 0;
+    if (arr[i] === 0){
+        return `Введіть значення`
+    }
+   return numbers.filter(elem => elem > 0).length;
+}
 
 // 7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5 Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]
 
@@ -125,11 +140,12 @@ const divideByThree = (word) => {
    if (str.length > 10) {
     return `Введіть слово довженною не більше 10 літер`;
    };
-
- let str1 = str.toLowerCase().split('');
-
- if(str1.length === 1){ return [str1]};
- let res = [];
+   let str1 = str.split('').filter((letter) => letter !== ' ');
+ if(str1.length === 1){return str1}
+ else if (str1 === !String){
+     return `gvm,`
+ }
+  let res = [];
  for (let i = 0; i < str1.length; i++){
  const letter = str1.splice(0, 1);
  const result = generateCombinations(str1.join(''));
@@ -139,7 +155,6 @@ const divideByThree = (word) => {
 return res;
  }
 //  console.log(generateCombinations("man"));
-
 
 
 console.log('getRandomArray(10, 3, 100)=> ', getRandomArray(10, 3, 100));
@@ -171,4 +186,4 @@ console.log(`divideByThree('Commander')=> `, divideByThree('Commander'));
 console.log(`divideByThree('live')=> `, divideByThree('live'));
 
 console.log(`generateCombinations('man')=>`, generateCombinations('man'));
-console.log(`generateCombinations('ol')=>`, generateCombinations('ol'));
+console.log(`generateCombinations('ol')=>`, generateCombinations(`ol`));
