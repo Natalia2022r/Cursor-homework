@@ -95,7 +95,7 @@ const  getDividedByFive  =(...numbers) => {
     if (arr[i] === 0){
         return `Введіть значення`
     }
-     return arr.filter(elem => elem % 5 === 0);}
+     return arr.filter(elem => elem % 5 === 0 && elem !== 0);}
 
 
 /*8.Створіть функцію replaceAll(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "), після чого масив необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте можливість розширювати список цих слів у майбутньому.
@@ -104,8 +104,8 @@ const  getDividedByFive  =(...numbers) => {
 function replaceAll(string) {
 
     let reg = /(shit)|(Fuck)/gi;  
-    let newstr = string.replace(reg,  function(a) {
-    return a.replace(/./g, '*');});
+    let newstr = string.replace(reg,  function(argument) {
+    return argument.replace(/./g, '*');});
     return newstr;
 
 };
