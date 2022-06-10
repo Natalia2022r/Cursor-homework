@@ -135,27 +135,31 @@ const divideByThree = (word) => {
  /*10.Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові. Для тестів не передавайте слова в яких більше 10 букв. Краще взагалі обмежити работу функції 10 буквами. 
  Приклад: generateCombinations("man") -> ["man", "mna", "amn", "anm", "nam", "nma"] Приклад: generateCombinations("ol") -> ["ol", "lo"]*/
 
- function generateCombinations(str) {
-
-   if (str.length > 10) {
-    return `Введіть слово довженною не більше 10 літер`;
-   };
-   let str1 = str.split('').filter((letter) => letter !== ' ');
- if(str1.length === 1){return str1}
- else if (str1 === !String){
-     return `gvm,`
- }
-  let res = [];
- for (let i = 0; i < str1.length; i++){
- const letter = str1.splice(0, 1);
- const result = generateCombinations(str1.join(''));
- result.forEach(item => res.push(item + letter));
- str1 = [...str1, ...letter];
- }
-return res;
- }
-//  console.log(generateCombinations("man"));
-
+function generateCombinations(string) {
+    if (!string) return 'Ще не ввели значення';
+       if (string.length > 10) {
+        return `Введіть слово довженною не більше 10 літер`;
+       };
+    function recur(string, prefix) {
+        if (string.length === 0) {
+            return [prefix];
+        } else {
+            let out = [];
+            for (let i = 0; i < string.length; i++) {
+                let pre = string.substring(0, i);
+                let post = string.substring(i + 1);
+                out = out.concat(recur(pre + post, string[i] + prefix));
+            }
+            return out;
+        }
+    }
+    let distinct = {};
+    recur(string, "").forEach(function(result) {
+        distinct[result] = true;
+    });
+    return Object.keys(distinct);
+}
+ 
 
 console.log('getRandomArray(10, 3, 100)=> ', getRandomArray(10, 3, 100));
 
