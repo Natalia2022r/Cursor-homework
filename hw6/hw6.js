@@ -72,9 +72,9 @@ function  getStudentsNames(student){
 // 5.Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
 
 function getBestStudent(students){
-  const bestMark = Math.max(...students.map(student => getAverageMark(student))).toString();
+  const bestMark = Math.max(...students.map(student => getAverageMark(student)));
   return students.map(student => ({name: student.name, averageMark: getAverageMark(student)}))
-      .filter(item => item.averageMark === bestMark)
+      .filter(item => +item.averageMark === bestMark)
       .map(student => student.name).join('');
 };
 
