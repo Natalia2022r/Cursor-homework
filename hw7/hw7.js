@@ -35,11 +35,11 @@ console.log(`getTotalTaxes.call(litva)`, getTotalTaxes.call(litva));
 
 function getMySalary(country){
     
-    setInterval(() =>{
+    const interval = setInterval(() =>{
     
     let salary = Number((Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500).toFixed(2));
     let taxes = Number((this.tax * salary).toFixed(2));
-    let profit = salary - taxes;
+    let profit = Number((salary - taxes).toFixed(2));
 		const result = {
 			salary: salary,
 			taxes: taxes,
@@ -48,5 +48,7 @@ function getMySalary(country){
 		console.log(result);
 	}
 		, 10000)
+		setTimeout(()=> clearInterval(interval),50000);
+
 }
 getMySalary.call(ukraine);
