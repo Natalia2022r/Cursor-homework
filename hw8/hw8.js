@@ -80,15 +80,6 @@ console.log(student.getAverageMark())
  30000);
 }
 }
-//     getScholarship() {
-//         setInterval(() => {
-//             if (this.status && this.getAverageMark() >= 4) {
-//                 console.log(`Ви отримали ` + this.scholarShip + ` грн. стипендії`);
-//             }
-//         }, 3000);
-//     }
-// }
-
 
  const student1 = new BudgetStudent(`Ігор Васильєв`, 2, 'Військова академія', 1400)
  console.log (student1)
