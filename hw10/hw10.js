@@ -19,12 +19,10 @@ for(let i = 0; i < button.length; i++) {
         clear();
         let id = this.id;
         this.classList.add("playing");
-        for(let j = 0; j < button.length; j++) {
-            if(audio[j].id == id) {
-                audio[j].currentTime = 0;
-                return audio[j].paused ? audio[j].play() : audio[j].pause();
+        if(audio[i].id === id) {
+                audio[i].currentTime = 0;
+                return audio[i].paused ? audio[i].play() : audio[i].pause();
             }
-        }
     });
 }
 
@@ -34,15 +32,12 @@ for(let i = 0; i < button.length; i++) {
         clear();
     let code = event.code;
         for(let i = 0; i < button.length; i++) {
-        if(button[i].id == code) {
+        if(button[i].id === code) {
         button[i].classList.add("playing");
         }
-    }
-
-    for(let j = 0; j < button.length; j++) {
-        if(audio[j].id == code) {
-            audio[j].currentTime = 0;
-            return audio[j].paused ? audio[j].play() : audio[j].pause();
+        if(audio[i].id === code) {
+            audio[i].currentTime = 0;
+            return audio[i].paused ? audio[i].play() : audio[i].pause();
         }
     }
 });
