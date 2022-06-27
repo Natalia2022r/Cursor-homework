@@ -19,7 +19,11 @@ const getModa = (...numbers) =>{
         acc[item] = acc[item] ? acc[item] + 1 : 1;
         return acc;
       }, {});
+
       const result = Object.keys(countItems).filter((item) => countItems[item] > 2);
+      if (result.every((item) => item[1] === 1)) {
+		return "Усі значення є модою"
+	}
       return result; 
     
 }
@@ -93,13 +97,21 @@ const  getDividedByFive  =(...numbers) => {
 
 /*8.Створіть функцію replaceAll(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно розбити масив на слова за допомогою функції .split(" "), після чого масив необхідно буде склеїти .join(" ") Погані слова: shit та fuck. Передбачте можливість розширювати список цих слів у майбутньому.*/
 
-
-function replaceAll(string) {
-
-    let reg = /(shit)|(Fuck)/gi;  
-    let newstr = string.replace(reg,  function(argument) {
-    return argument.replace(/./g, '*');});
-    return newstr;
+const replaceAll = (string, ...badWords) => {
+    const badWordsArray = ['shit', 'fuck'];
+    if (badWords.length) {
+        badWordsArray.push(...badWords.map(item => item.toLowerCase()).filter(word => !badWordsArray.includes(word)));
+    }
+    const result = string.split(' ').map(word => {
+        const wordTLC = word.toLowerCase();
+        badWordsArray.forEach(badWord => {
+            if (wordTLC.includes(badWord)) {
+                word = wordTLC.replaceAll(badWord, new Array(badWord.length).fill('*').join(''));
+            }
+        });
+        return word;
+    }).join(' ');
+    return result;
 
 };
 
