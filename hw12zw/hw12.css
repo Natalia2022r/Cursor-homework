@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 /* button neon   */
   .noselect {
     -webkit-touch-callout: none;
@@ -9,9 +14,11 @@
     position: fixed;
     left: 50px;
     top: 20px;
+
   }
   
   button {
+    
     display: flex;
     flex-direction: column;
     background: none;
@@ -20,6 +27,7 @@
     color: rgb(139, 114, 114);
     font-size: 30px;
     cursor: pointer;
+  
     -webkit-tap-highlight-color: transparent;
   }
   
@@ -29,6 +37,7 @@
   }
   
   #neon:hover span {
+    
     animation: flicker 1s linear forwards;
   }
   
@@ -67,28 +76,36 @@
   }
   
   #neon:focus {
+    z-index: 1;
     outline: none;
   }
 
   .container {
+   display: none;
     max-width: 1200px;
     margin: 0 auto;
   }
   .movies {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
   
   .movie {
+    position: relative;
     width: 240px;
     margin: 10px;
-    position: relative;
+  
   }
   
   .movie__cover-inner {
-    position: relative;
-    height: 360px;
+    display: flex;
+    height: 150px;
+    overflow: hidden;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
   }
   
   .movie__cover {
@@ -96,11 +113,62 @@
     height: 100%;
   }
   .movie__info {
-    padding: 10px 0px;
+    font-family: 'League Gothic', sans-serif;
+font-family: 'Lobster Two', cursive;
+    color: rgb(19, 154, 232);
+    font-size: 12px;
+    position: absolute;
+    top: 80px;
+    padding: 10px 10px;
   }
-  
-  .movie__title {
-    font-size: 16px;
-    color: #ffffff;
+
+  .active{
+    display: block;
   }
+
+  /* button next */
   
+.btn {
+  z-index: 1;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #520347;
+  border-radius: 0.6em;
+  color: #890875;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.first {
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.first:hover {
+  box-shadow: 0 0 40px 40px #100353 inset;
+}

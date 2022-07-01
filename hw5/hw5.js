@@ -13,22 +13,17 @@ return randomArray;
 
 // 2.Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ 
 
-const getModa = (...numbers) =>{
-    const arrModa = numbers.map((elem) => Number(elem)).filter((item) => parseInt(item) === item);
-    const countItems = arrModa.reduce((acc, item) => {
-        acc[item] = acc[item] ? acc[item] + 1 : 1;
-        return acc;
-      }, {});
-
-      const result = Object.keys(countItems).filter((item) => countItems[item] > 2);
-      if (result.every((item) => item[1] === 1)) {
-		return "Усі значення є модою"
-	}
-      return result; 
-    
-}
-
-
+function getModa(...numbers){
+    const arr = new Set(numbers.filter(item => Number.isInteger(item)));
+    let max = 0;
+    const result = [];
+    arr.forEach(number => {
+        const count = numbers.filter(elem => elem === number).length
+        if (max < count) max = count;
+        result.push({number, count});
+    });
+    return result.filter((item) => item.count == max).map(i => i.number).join();
+ }
 //    3. Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 
 
