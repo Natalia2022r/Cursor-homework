@@ -30,12 +30,10 @@ for(let i = 0; i < button.length; i++) {
    document.addEventListener("keydown", function(event) {
     if (event.repeat) return;
         clear();
-    let code = event.code;
+    let id = event.code;
         for(let i = 0; i < button.length; i++) {
-        if(button[i].id === code) {
-        button[i].classList.add("playing");
-        }
-        if(audio[i].id === code) {
+         if(audio[i].id === id) {
+            button[i].classList.add("playing");
             audio[i].currentTime = 0;
             return audio[i].paused ? audio[i].play() : audio[i].pause();
         }
