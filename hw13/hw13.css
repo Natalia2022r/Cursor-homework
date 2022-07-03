@@ -1,0 +1,43 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.intro{
+font-size: 18px;
+text-align: center;
+padding-bottom: 40px;
+}
+.generat{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0px 0px 40px 20px;
+    border: 5px solid rgb(18, 240, 14);;
+
+}
+
+h2, p {
+    padding-bottom: 20px;
+}
+
+.info,
+.result{
+
+    padding-top: 20px;
+    font-size: 18px;
+    color: brown;
+}
+button {
+    max-width: 150px;
+    height: 40px;
+    color: aliceblue;
+    border: 1px solid rgb(5, 241, 5);
+    border-radius: 20px;
+    margin: 0px 0px 10px 0px;
+    background-color: rgb(65, 17, 238);
+}
+.text{
+    font-size: 14px;
+}
