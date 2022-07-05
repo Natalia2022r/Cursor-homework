@@ -20,12 +20,12 @@ function * newFontGenerator(font){
     while(true){
       let changes = yield font;
         if(changes === "up"){
-            changes = yield  font += 2;
+            font += 2;
         }
         if(changes === "down"){
-            changes = yield font -= 2;
+            font -= 2;
         }
-        changes = yield font;
+        font;
     }
     
 }
