@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script defer src="bundle.js"></script><link href="bundle.css" rel="stylesheet"></head>
+<body>
+    <div class="conteiner">
+        <h1 style="font-size: 40px;">HW#14 "Інструменти. Модульність коду та Webpack"</h1>
+        <h2 style="font-size: 20px ; color:blue">Відкрий консоль</h2>
+    </div>
+
+    <hr>
+<div class="cub">
+    <button id = button >Натисни мене</button>
+    <div id = box></div>
+</div>
+<hr>
+
+    
+<div class="hw8">
+     <button class="sound" id="KeyA"> <b>A</b>  <br /><span>Ocean surf coast</span></button>
+    <button class="sound" id="KeyS"><b>S</b> <br /><span>Ocean surf on rocks</span></button>
+    <button class="sound" id="KeyD"><b>D</b> <br /><span>Ocean wave weakly</span></button>
+
+<audio id="KeyA" src="./ocean-surf-coast.mp3"></audio>
+<audio id="KeyS" src="./ocean-surf-on-rocks.mp3"></audio>
+<audio id="KeyD" src="./ocean-waves-strongly.mp3"></audio>
+</div>
+
+<hr>
+
+
+<div class="generat ">
+    <h2>Exercise #1</h2>
+    <span>Створіть нескінченний генератор ідентифікаторів. Повинен працювати наступним чином:
+        const idGenerator = createIdGenerator();            
+        idGenerator.next().value -> 1
+        idGenerator.next().value -> 2
+        idGenerator.next().value -> 3
+        
+        ...</span> 
+    <button id ="btn">Generator</button>
+    <div class="result">
+        <span> Result:</span>
+   <span class="info"></span>
+    </div>
+    
+</div>
+
+<div class="starwars">
+    <span class="intro__title">Planets in STAR WARS</span>
+
+    <button id="nav" class="btns btn3"></button>
+    <main id="main"></main>
+     <footer id="footer"></footer>
+</div>
+
+</div>
+
+</body>
+</html>
