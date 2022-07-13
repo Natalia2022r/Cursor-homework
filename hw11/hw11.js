@@ -17,8 +17,6 @@ async function getRandomChinese(length) {
          
       }
       return str;
-  } else {
-      return "Wrong!"
   }
 }
 
