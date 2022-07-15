@@ -22,7 +22,7 @@ async function getHeroesInfo(url){
     movieEl.innerHTML = `
     <div class="movie__cover-inner">
     <img
-      src="imgHero/${hero.name}.jpg"
+      src="images/imgHero/${hero.name}.jpg"
       class="movie__cover"
       alt=""/></div>
          <div class="movie__info">

@@ -1,5 +1,6 @@
 `use strict`
 
+
 // PLANETS
 const APP = {
     urls: {
@@ -51,7 +52,7 @@ const APP = {
           return `<p>${nm}</p>`;
         })
         .join(' ');
-      let footer = document.getElementById('footer');
+      const footer = document.getElementById('footer');
       footer.innerHTML = '';
   
       if (data.previous) {
