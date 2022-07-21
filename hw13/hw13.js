@@ -5,7 +5,7 @@ const generatUpFont = document.querySelector("#up");
 const downFont = document.querySelector("#down");
 const text = document.querySelector(".text");
 
-function * createIdGenerator(){
+function* createIdGenerator(){
     let id = 1;
     while(true){
         yield id++
